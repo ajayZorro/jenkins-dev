@@ -22,20 +22,20 @@ pipeline {
 
         stage('Env') {
             steps {
-                sh 'java -version || true'
-                sh 'chmod +x gradlew'
+                bat 'java -version'
+                bat 'gradlew.bat --version'
             }
         }
 
         stage('Build') {
             steps {
-                sh './gradlew clean build -x test'
+                bat 'gradlew.bat clean build -x test'
             }
         }
 
         stage('TestNG Tests') {
             steps {
-                sh "./gradlew test -Dbrowser=${params.BROWSER}"
+                bat "gradlew.bat test -Dbrowser=${params.BROWSER}"
             }
             post {
                 always {
@@ -47,7 +47,7 @@ pipeline {
 
         stage('CSV Tests') {
             steps {
-                sh "./gradlew runTestsWithCSV -Dcsv.file=${params.CSV_FILE} -Dbrowser=${params.BROWSER}"
+                bat "gradlew.bat runTestsWithCSV -Dcsv.file=${params.CSV_FILE} -Dbrowser=${params.BROWSER}"
             }
         }
 
@@ -60,7 +60,7 @@ pipeline {
                 }
             }
             steps {
-                sh "./gradlew triggerJenkinsJob -Djenkins.url=${params.JENKINS_URL} -Djenkins.username=${params.JENKINS_USERNAME} -Djenkins.token=${params.JENKINS_TOKEN}"
+                bat "gradlew.bat triggerJenkinsJob -Djenkins.url=${params.JENKINS_URL} -Djenkins.username=${params.JENKINS_USERNAME} -Djenkins.token=${params.JENKINS_TOKEN}"
             }
         }
     }
