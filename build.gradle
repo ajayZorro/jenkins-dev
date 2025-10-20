@@ -1,0 +1,60 @@
+plugins {
+    id 'java'
+    id 'application'
+}
+
+group = 'com.jenkins.selenium'
+version = '1.0.0'
+sourceCompatibility = '11'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    // Selenium WebDriver
+    implementation 'org.seleniumhq.selenium:selenium-java:4.15.0'
+    implementation 'org.seleniumhq.selenium:selenium-chrome-driver:4.15.0'
+    implementation 'org.seleniumhq.selenium:selenium-firefox-driver:4.15.0'
+    
+    // TestNG for test framework
+    testImplementation 'org.testng:testng:7.8.0'
+    
+    // CSV processing
+    implementation 'com.opencsv:opencsv:5.8'
+    
+    // JSON processing for Jenkins API
+    implementation 'com.fasterxml.jackson.core:jackson-databind:2.15.2'
+    
+    // Logging
+    implementation 'org.slf4j:slf4j-api:2.0.9'
+    implementation 'ch.qos.logback:logback-classic:1.4.11'
+    
+    // HTTP client for Jenkins API calls
+    implementation 'org.apache.httpcomponents.client5:httpclient5:5.2.1'
+}
+
+test {
+    useTestNG()
+    testLogging {
+        events "passed", "skipped", "failed"
+        exceptionFormat "full"
+    }
+}
+
+application {
+    mainClass = 'com.jenkins.selenium.Main'
+}
+
+// Task to run tests with CSV data
+task runTestsWithCSV(type: JavaExec) {
+    classpath = sourceSets.main.runtimeClasspath
+    mainClass = 'com.jenkins.selenium.TestRunner'
+    args = ['src/test/resources/testdata.csv']
+}
+
+// Task to trigger Jenkins job
+task triggerJenkinsJob(type: JavaExec) {
+    classpath = sourceSets.main.runtimeClasspath
+    mainClass = 'com.jenkins.selenium.JenkinsTrigger'
+}

@@ -1,0 +1,6 @@
+searchTerm,expectedResult,testName,browser
+Jenkins,Jenkins,Test Jenkins Search,chrome
+Selenium,Selenium,Test Selenium Search,chrome
+Java,Java,Test Java Search,firefox
+Gradle,Gradle,Test Gradle Search,chrome
+TestNG,TestNG,Test TestNG Search,chrome

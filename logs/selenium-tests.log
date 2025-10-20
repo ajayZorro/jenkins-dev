@@ -1,0 +1,259 @@
+2025-10-20 12:02:01.647 [Test worker] INFO  com.jenkins.selenium.BaseTest - WebDriver setup completed for browser: chrome
+2025-10-20 12:02:01.656 [Test worker] INFO  com.jenkins.selenium.BaseTest - Starting test: Test Jenkins Search with search term: Jenkins
+2025-10-20 12:02:02.486 [Test worker] INFO  com.jenkins.selenium.BaseTest - Navigated to Google homepage
+2025-10-20 12:02:02.614 [Test worker] INFO  com.jenkins.selenium.BaseTest - Entered search term: Jenkins
+2025-10-20 12:02:04.075 [Test worker] INFO  com.jenkins.selenium.BaseTest - Submitted search
+2025-10-20 12:02:06.305 [Test worker] INFO  com.jenkins.selenium.BaseTest - WebDriver closed successfully
+2025-10-20 12:02:07.425 [Test worker] INFO  com.jenkins.selenium.BaseTest - WebDriver setup completed for browser: chrome
+2025-10-20 12:02:07.426 [Test worker] INFO  com.jenkins.selenium.BaseTest - Starting test: Test Selenium Search with search term: Selenium
+2025-10-20 12:02:08.064 [Test worker] INFO  com.jenkins.selenium.BaseTest - Navigated to Google homepage
+2025-10-20 12:02:08.181 [Test worker] INFO  com.jenkins.selenium.BaseTest - Entered search term: Selenium
+2025-10-20 12:02:09.348 [Test worker] INFO  com.jenkins.selenium.BaseTest - Submitted search
+2025-10-20 12:02:11.522 [Test worker] INFO  com.jenkins.selenium.BaseTest - WebDriver closed successfully
+2025-10-20 12:02:12.656 [Test worker] INFO  com.jenkins.selenium.BaseTest - WebDriver setup completed for browser: chrome
+2025-10-20 12:02:12.656 [Test worker] INFO  com.jenkins.selenium.BaseTest - Starting test: Test Java Search with search term: Java
+2025-10-20 12:02:13.314 [Test worker] INFO  com.jenkins.selenium.BaseTest - Navigated to Google homepage
+2025-10-20 12:02:13.428 [Test worker] INFO  com.jenkins.selenium.BaseTest - Entered search term: Java
+2025-10-20 12:02:13.569 [Test worker] INFO  com.jenkins.selenium.BaseTest - Submitted search
+2025-10-20 12:02:15.803 [Test worker] INFO  com.jenkins.selenium.BaseTest - WebDriver closed successfully
+2025-10-20 12:02:16.869 [Test worker] INFO  com.jenkins.selenium.BaseTest - WebDriver setup completed for browser: chrome
+2025-10-20 12:02:16.870 [Test worker] INFO  com.jenkins.selenium.BaseTest - Starting test: Test Gradle Search with search term: Gradle
+2025-10-20 12:02:17.688 [Test worker] INFO  com.jenkins.selenium.BaseTest - Navigated to Google homepage
+2025-10-20 12:02:17.799 [Test worker] INFO  com.jenkins.selenium.BaseTest - Entered search term: Gradle
+2025-10-20 12:02:19.017 [Test worker] INFO  com.jenkins.selenium.BaseTest - Submitted search
+2025-10-20 12:02:21.194 [Test worker] INFO  com.jenkins.selenium.BaseTest - WebDriver closed successfully
+2025-10-20 12:02:22.291 [Test worker] INFO  com.jenkins.selenium.BaseTest - WebDriver setup completed for browser: chrome
+2025-10-20 12:02:22.293 [Test worker] INFO  com.jenkins.selenium.BaseTest - Starting test: Test TestNG Search with search term: TestNG
+2025-10-20 12:02:22.928 [Test worker] INFO  com.jenkins.selenium.BaseTest - Navigated to Google homepage
+2025-10-20 12:02:23.030 [Test worker] INFO  com.jenkins.selenium.BaseTest - Entered search term: TestNG
+2025-10-20 12:02:23.142 [Test worker] INFO  com.jenkins.selenium.BaseTest - Submitted search
+2025-10-20 12:02:25.327 [Test worker] INFO  com.jenkins.selenium.BaseTest - WebDriver closed successfully
+2025-10-20 12:02:26.384 [Test worker] INFO  com.jenkins.selenium.BaseTest - WebDriver setup completed for browser: chrome
+2025-10-20 12:02:26.399 [Test worker] INFO  com.jenkins.selenium.TestDataReader - Loaded test data: TestData{searchTerm='Jenkins', expectedResult='Jenkins', testName='Test Jenkins Search', browser='chrome'}
+2025-10-20 12:02:26.401 [Test worker] INFO  com.jenkins.selenium.TestDataReader - Loaded test data: TestData{searchTerm='Selenium', expectedResult='Selenium', testName='Test Selenium Search', browser='chrome'}
+2025-10-20 12:02:26.401 [Test worker] INFO  com.jenkins.selenium.TestDataReader - Loaded test data: TestData{searchTerm='Java', expectedResult='Java', testName='Test Java Search', browser='firefox'}
+2025-10-20 12:02:26.402 [Test worker] INFO  com.jenkins.selenium.TestDataReader - Loaded test data: TestData{searchTerm='Gradle', expectedResult='Gradle', testName='Test Gradle Search', browser='chrome'}
+2025-10-20 12:02:26.402 [Test worker] INFO  com.jenkins.selenium.TestDataReader - Loaded test data: TestData{searchTerm='TestNG', expectedResult='TestNG', testName='Test TestNG Search', browser='chrome'}
+2025-10-20 12:02:26.402 [Test worker] INFO  com.jenkins.selenium.TestDataReader - Successfully loaded 5 test data records
+2025-10-20 12:02:26.402 [Test worker] INFO  com.jenkins.selenium.BaseTest - Running test with CSV data: TestData{searchTerm='Jenkins', expectedResult='Jenkins', testName='Test Jenkins Search', browser='chrome'}
+2025-10-20 12:02:27.443 [Test worker] INFO  com.jenkins.selenium.BaseTest - WebDriver setup completed for browser: chrome
+2025-10-20 12:02:28.101 [Test worker] INFO  com.jenkins.selenium.BaseTest - Navigated to Google homepage
+2025-10-20 12:02:28.212 [Test worker] INFO  com.jenkins.selenium.BaseTest - Entered search term: Jenkins
+2025-10-20 12:02:29.557 [Test worker] INFO  com.jenkins.selenium.BaseTest - Submitted search
+2025-10-20 12:02:31.750 [Test worker] INFO  com.jenkins.selenium.BaseTest - WebDriver closed successfully
+2025-10-20 12:02:31.752 [Test worker] INFO  com.jenkins.selenium.BaseTest - WebDriver closed successfully
+2025-10-20 12:04:06.764 [Test worker] INFO  com.jenkins.selenium.BaseTest - WebDriver setup completed for browser: chrome
+2025-10-20 12:04:06.769 [Test worker] INFO  com.jenkins.selenium.BaseTest - Starting test: Test Jenkins Search with search term: Jenkins
+2025-10-20 12:04:07.468 [Test worker] INFO  com.jenkins.selenium.BaseTest - Navigated to Google homepage
+2025-10-20 12:04:07.596 [Test worker] INFO  com.jenkins.selenium.BaseTest - Entered search term: Jenkins
+2025-10-20 12:04:07.705 [Test worker] INFO  com.jenkins.selenium.BaseTest - Submitted search
+2025-10-20 12:04:10.729 [Test worker] INFO  com.jenkins.selenium.BaseTest - Current page title: https://www.google.com/search?q=Jenkins&sca_esv=6e4820828e77e658&source=hp&ei=c132aM-qMZjAkPIP8N3p4QU&iflsig=AOw8s4IAAAAAaPZrgztouElbm-DdkCHqQRHkwnq4X1Ti&sei=dF32aIWXJq6hqtsP3bWZ8Q8
+2025-10-20 12:04:10.734 [Test worker] INFO  com.jenkins.selenium.BaseTest - Current page URL: https://www.google.com/sorry/index?continue=https://www.google.com/search%3Fq%3DJenkins%26sca_esv%3D6e4820828e77e658%26source%3Dhp%26ei%3Dc132aM-qMZjAkPIP8N3p4QU%26iflsig%3DAOw8s4IAAAAAaPZrgztouElbm-DdkCHqQRHkwnq4X1Ti%26sei%3DdF32aIWXJq6hqtsP3bWZ8Q8&q=EhAmA2CAQwJo1Xlg0iqpSL88GPS62ccGIjBVYDil_RW14d1BOO4BP1JGpRsBNFgpikeGdR43qHA458dcNIi0Syot0FFc5gPdG_MyAVJaAUM
+2025-10-20 12:04:10.772 [Test worker] INFO  com.jenkins.selenium.BaseTest - Found 0 search result elements
+2025-10-20 12:04:10.784 [Test worker] INFO  com.jenkins.selenium.BaseTest - Checking 0 result containers
+2025-10-20 12:04:11.002 [Test worker] INFO  com.jenkins.selenium.BaseTest - WebDriver closed successfully
+2025-10-20 12:04:12.125 [Test worker] INFO  com.jenkins.selenium.BaseTest - WebDriver setup completed for browser: chrome
+2025-10-20 12:04:12.127 [Test worker] INFO  com.jenkins.selenium.BaseTest - Starting test: Test Selenium Search with search term: Selenium
+2025-10-20 12:04:12.752 [Test worker] INFO  com.jenkins.selenium.BaseTest - Navigated to Google homepage
+2025-10-20 12:04:12.867 [Test worker] INFO  com.jenkins.selenium.BaseTest - Entered search term: Selenium
+2025-10-20 12:04:12.988 [Test worker] INFO  com.jenkins.selenium.BaseTest - Submitted search
+2025-10-20 12:04:16.008 [Test worker] INFO  com.jenkins.selenium.BaseTest - Current page title: https://www.google.com/search?q=Selenium&sca_esv=6e4820828e77e658&source=hp&ei=eV32aPvOCfqlqtsP0JzxuQY&iflsig=AOw8s4IAAAAAaPZrifWx0y6-Bew-7FQ-ka1PFdJq0Ww6&sei=eV32aKKuNumrmtkPkZOp8Qs
+2025-10-20 12:04:16.015 [Test worker] INFO  com.jenkins.selenium.BaseTest - Current page URL: https://www.google.com/sorry/index?continue=https://www.google.com/search%3Fq%3DSelenium%26sca_esv%3D6e4820828e77e658%26source%3Dhp%26ei%3DeV32aPvOCfqlqtsP0JzxuQY%26iflsig%3DAOw8s4IAAAAAaPZrifWx0y6-Bew-7FQ-ka1PFdJq0Ww6%26sei%3DeV32aKKuNumrmtkPkZOp8Qs&q=EhAmA2CAQwJo1Xlg0iqpSL88GPq62ccGIjDeEIUpWKuYOUTnSeBQLptWtH94yqzjBBV46cxCljNm4UdUQG2YnRBqK5ui64obezIyAVJaAUM
+2025-10-20 12:04:16.053 [Test worker] INFO  com.jenkins.selenium.BaseTest - Found 0 search result elements
+2025-10-20 12:04:16.065 [Test worker] INFO  com.jenkins.selenium.BaseTest - Checking 0 result containers
+2025-10-20 12:04:16.247 [Test worker] INFO  com.jenkins.selenium.BaseTest - WebDriver closed successfully
+2025-10-20 12:04:17.387 [Test worker] INFO  com.jenkins.selenium.BaseTest - WebDriver setup completed for browser: chrome
+2025-10-20 12:04:17.388 [Test worker] INFO  com.jenkins.selenium.BaseTest - Starting test: Test Java Search with search term: Java
+2025-10-20 12:04:18.091 [Test worker] INFO  com.jenkins.selenium.BaseTest - Navigated to Google homepage
+2025-10-20 12:04:18.224 [Test worker] INFO  com.jenkins.selenium.BaseTest - Entered search term: Java
+2025-10-20 12:04:19.692 [Test worker] INFO  com.jenkins.selenium.BaseTest - Submitted search
+2025-10-20 12:04:22.707 [Test worker] INFO  com.jenkins.selenium.BaseTest - Current page title: https://www.google.com/search?q=Java&sca_esv=6e4820828e77e658&source=hp&ei=fl32aKmgGKytqtsPvYiMyA8&iflsig=AOw8s4IAAAAAaPZrjgdKZYS1ffzR6KoHpqtw7LdJNYfa&sei=f132aP6ID42lqtsP5fXs0QU
+2025-10-20 12:04:22.717 [Test worker] INFO  com.jenkins.selenium.BaseTest - Current page URL: https://www.google.com/sorry/index?continue=https://www.google.com/search%3Fq%3DJava%26sca_esv%3D6e4820828e77e658%26source%3Dhp%26ei%3Dfl32aKmgGKytqtsPvYiMyA8%26iflsig%3DAOw8s4IAAAAAaPZrjgdKZYS1ffzR6KoHpqtw7LdJNYfa%26sei%3Df132aP6ID42lqtsP5fXs0QU&q=EhAmA2CAQwJo1Xlg0iqpSL88GP-62ccGIjBx_wbuRZJV-kR_kUHT_gK5ibiZDcj12gbBRXqnIby98NDA230ELVZlqZIEVz-5DCcyAVJaAUM
+2025-10-20 12:04:22.757 [Test worker] INFO  com.jenkins.selenium.BaseTest - Found 0 search result elements
+2025-10-20 12:04:22.769 [Test worker] INFO  com.jenkins.selenium.BaseTest - Checking 0 result containers
+2025-10-20 12:04:22.976 [Test worker] INFO  com.jenkins.selenium.BaseTest - WebDriver closed successfully
+2025-10-20 12:04:24.108 [Test worker] INFO  com.jenkins.selenium.BaseTest - WebDriver setup completed for browser: chrome
+2025-10-20 12:04:24.109 [Test worker] INFO  com.jenkins.selenium.BaseTest - Starting test: Test Gradle Search with search term: Gradle
+2025-10-20 12:04:24.949 [Test worker] INFO  com.jenkins.selenium.BaseTest - Navigated to Google homepage
+2025-10-20 12:04:25.079 [Test worker] INFO  com.jenkins.selenium.BaseTest - Entered search term: Gradle
+2025-10-20 12:04:26.342 [Test worker] INFO  com.jenkins.selenium.BaseTest - Submitted search
+2025-10-20 12:04:29.356 [Test worker] INFO  com.jenkins.selenium.BaseTest - Current page title: https://www.google.com/search?q=Gradle&sca_esv=6e4820828e77e658&source=hp&ei=hV32aMzAB7uzmtkPyZ_80A4&iflsig=AOw8s4IAAAAAaPZrlQsg3sY6M0Vr3LkTz3B7hnQehz-k&sei=hl32aMzmBbqyqtsPk-vJgQM
+2025-10-20 12:04:29.361 [Test worker] INFO  com.jenkins.selenium.BaseTest - Current page URL: https://www.google.com/sorry/index?continue=https://www.google.com/search%3Fq%3DGradle%26sca_esv%3D6e4820828e77e658%26source%3Dhp%26ei%3DhV32aMzAB7uzmtkPyZ_80A4%26iflsig%3DAOw8s4IAAAAAaPZrlQsg3sY6M0Vr3LkTz3B7hnQehz-k%26sei%3Dhl32aMzmBbqyqtsPk-vJgQM&q=EhAmA2CAQwJo1Xlg0iqpSL88GIa72ccGIjBy5ICxF2asiG8LFoJ06hTIljt20WTcVt7iOdavuM_P2KR-eLEe3R5iLKe4BF7SxJQyAVJaAUM
+2025-10-20 12:04:29.398 [Test worker] INFO  com.jenkins.selenium.BaseTest - Found 0 search result elements
+2025-10-20 12:04:29.408 [Test worker] INFO  com.jenkins.selenium.BaseTest - Checking 0 result containers
+2025-10-20 12:04:29.628 [Test worker] INFO  com.jenkins.selenium.BaseTest - WebDriver closed successfully
+2025-10-20 12:04:30.747 [Test worker] INFO  com.jenkins.selenium.BaseTest - WebDriver setup completed for browser: chrome
+2025-10-20 12:04:30.748 [Test worker] INFO  com.jenkins.selenium.BaseTest - Starting test: Test TestNG Search with search term: TestNG
+2025-10-20 12:04:31.476 [Test worker] INFO  com.jenkins.selenium.BaseTest - Navigated to Google homepage
+2025-10-20 12:04:31.601 [Test worker] INFO  com.jenkins.selenium.BaseTest - Entered search term: TestNG
+2025-10-20 12:04:31.726 [Test worker] INFO  com.jenkins.selenium.BaseTest - Submitted search
+2025-10-20 12:04:34.745 [Test worker] INFO  com.jenkins.selenium.BaseTest - Current page title: https://www.google.com/search?q=TestNG&sca_esv=6e4820828e77e658&source=hp&ei=i132aMOqL9KkqtsPm7CX-AY&iflsig=AOw8s4IAAAAAaPZrm9_66nCfiYTv9GhpI7IJaP1KRZNj&sei=jF32aOPbJe64mtkPrqurgA8
+2025-10-20 12:04:34.750 [Test worker] INFO  com.jenkins.selenium.BaseTest - Current page URL: https://www.google.com/sorry/index?continue=https://www.google.com/search%3Fq%3DTestNG%26sca_esv%3D6e4820828e77e658%26source%3Dhp%26ei%3Di132aMOqL9KkqtsPm7CX-AY%26iflsig%3DAOw8s4IAAAAAaPZrm9_66nCfiYTv9GhpI7IJaP1KRZNj%26sei%3DjF32aOPbJe64mtkPrqurgA8&q=EhAmA2CAQwJo1Xlg0iqpSL88GIy72ccGIjAYPt6A9tnBVK56j4I_sy1GQ8oAmW0AshrfedrPHB8hOqrIr8fssg886wLNcmI9rj0yAVJaAUM
+2025-10-20 12:04:34.778 [Test worker] INFO  com.jenkins.selenium.BaseTest - Found 0 search result elements
+2025-10-20 12:04:34.788 [Test worker] INFO  com.jenkins.selenium.BaseTest - Checking 0 result containers
+2025-10-20 12:04:34.952 [Test worker] INFO  com.jenkins.selenium.BaseTest - WebDriver closed successfully
+2025-10-20 12:06:28.808 [Test worker] INFO  com.jenkins.selenium.BaseTest - WebDriver setup completed for browser: chrome
+2025-10-20 12:06:28.813 [Test worker] INFO  com.jenkins.selenium.BaseTest - Testing Google page loads
+2025-10-20 12:06:29.475 [Test worker] INFO  com.jenkins.selenium.BaseTest - Navigated to Google homepage
+2025-10-20 12:06:29.486 [Test worker] INFO  com.jenkins.selenium.BaseTest - Page title: Google
+2025-10-20 12:06:29.515 [Test worker] INFO  com.jenkins.selenium.BaseTest - Test passed: Google page loads correctly
+2025-10-20 12:06:29.696 [Test worker] INFO  com.jenkins.selenium.BaseTest - WebDriver closed successfully
+2025-10-20 12:06:30.807 [Test worker] INFO  com.jenkins.selenium.BaseTest - WebDriver setup completed for browser: chrome
+2025-10-20 12:06:30.808 [Test worker] INFO  com.jenkins.selenium.BaseTest - Testing Google search with CSV data
+2025-10-20 12:06:30.823 [Test worker] INFO  com.jenkins.selenium.TestDataReader - Loaded test data: TestData{searchTerm='Jenkins', expectedResult='Jenkins', testName='Test Jenkins Search', browser='chrome'}
+2025-10-20 12:06:30.826 [Test worker] INFO  com.jenkins.selenium.TestDataReader - Loaded test data: TestData{searchTerm='Selenium', expectedResult='Selenium', testName='Test Selenium Search', browser='chrome'}
+2025-10-20 12:06:30.826 [Test worker] INFO  com.jenkins.selenium.TestDataReader - Loaded test data: TestData{searchTerm='Java', expectedResult='Java', testName='Test Java Search', browser='firefox'}
+2025-10-20 12:06:30.826 [Test worker] INFO  com.jenkins.selenium.TestDataReader - Loaded test data: TestData{searchTerm='Gradle', expectedResult='Gradle', testName='Test Gradle Search', browser='chrome'}
+2025-10-20 12:06:30.827 [Test worker] INFO  com.jenkins.selenium.TestDataReader - Loaded test data: TestData{searchTerm='TestNG', expectedResult='TestNG', testName='Test TestNG Search', browser='chrome'}
+2025-10-20 12:06:30.827 [Test worker] INFO  com.jenkins.selenium.TestDataReader - Successfully loaded 5 test data records
+2025-10-20 12:06:30.827 [Test worker] INFO  com.jenkins.selenium.BaseTest - Running test with CSV data: TestData{searchTerm='Jenkins', expectedResult='Jenkins', testName='Test Jenkins Search', browser='chrome'}
+2025-10-20 12:06:31.996 [Test worker] INFO  com.jenkins.selenium.BaseTest - WebDriver setup completed for browser: chrome
+2025-10-20 12:06:32.866 [Test worker] INFO  com.jenkins.selenium.BaseTest - Navigated to Google homepage
+2025-10-20 12:06:33.026 [Test worker] INFO  com.jenkins.selenium.BaseTest - Entered search term: Jenkins
+2025-10-20 12:06:33.140 [Test worker] INFO  com.jenkins.selenium.BaseTest - Submitted search
+2025-10-20 12:06:36.152 [Test worker] INFO  com.jenkins.selenium.BaseTest - Current URL: https://www.google.com/sorry/index?continue=https://www.google.com/search%3Fq%3DJenkins%26sca_esv%3D6e4820828e77e658%26source%3Dhp%26ei%3DBV72aIyIAvWxqtsPj4WmyAw%26iflsig%3DAOw8s4IAAAAAaPZsFXoNvPVy4A_Tdxfp43JuUqpO4r6W%26sei%3DBl72aOWiAtz-p84Pubm_oQc&q=EhAmA2CAQwJo1Xlg0iqpSL88GIa82ccGIjBiwpFbUo8ZuQimAVkQ5NVEajIIvBo9nOqFuWMttDGzg05jb63xmTi-zgLDlcZJH6UyAVJaAUM
+2025-10-20 12:06:36.153 [Test worker] INFO  com.jenkins.selenium.BaseTest - Test passed: Test Jenkins Search
+2025-10-20 12:06:36.330 [Test worker] INFO  com.jenkins.selenium.BaseTest - WebDriver closed successfully
+2025-10-20 12:06:36.330 [Test worker] INFO  com.jenkins.selenium.BaseTest - Running test with CSV data: TestData{searchTerm='Selenium', expectedResult='Selenium', testName='Test Selenium Search', browser='chrome'}
+2025-10-20 12:06:37.487 [Test worker] INFO  com.jenkins.selenium.BaseTest - WebDriver setup completed for browser: chrome
+2025-10-20 12:06:38.103 [Test worker] INFO  com.jenkins.selenium.BaseTest - Navigated to Google homepage
+2025-10-20 12:06:38.285 [Test worker] INFO  com.jenkins.selenium.BaseTest - Entered search term: Selenium
+2025-10-20 12:06:38.401 [Test worker] INFO  com.jenkins.selenium.BaseTest - Submitted search
+2025-10-20 12:06:41.429 [Test worker] INFO  com.jenkins.selenium.BaseTest - Current URL: https://www.google.com/sorry/index?continue=https://www.google.com/search%3Fq%3DSelenium%26sca_esv%3D6e4820828e77e658%26source%3Dhp%26ei%3DCl72aIm_HsCRwbkPqIivwAE%26iflsig%3DAOw8s4IAAAAAaPZsGooaiP8WUwL4hLiAtZbfIXvjo5BD%26sei%3DC172aOmmEpf-p84P_PHXgA0&q=EhAmA2CAQwJo1Xlg0iqpSL88GIu82ccGIjDAsIFasu5tmiLSTvOTvDcyo_cfEx2M2xymY-XP8QVIHvFeKkYdvFrZszf3iRqLqoMyAVJaAUM
+2025-10-20 12:06:41.429 [Test worker] INFO  com.jenkins.selenium.BaseTest - Test passed: Test Selenium Search
+2025-10-20 12:06:41.606 [Test worker] INFO  com.jenkins.selenium.BaseTest - WebDriver closed successfully
+2025-10-20 12:06:41.607 [Test worker] INFO  com.jenkins.selenium.BaseTest - Running test with CSV data: TestData{searchTerm='Java', expectedResult='Java', testName='Test Java Search', browser='firefox'}
+2025-10-20 12:07:03.509 [Test worker] INFO  com.jenkins.selenium.BaseTest - WebDriver setup completed for browser: firefox
+2025-10-20 12:07:04.434 [Test worker] INFO  com.jenkins.selenium.BaseTest - Navigated to Google homepage
+2025-10-20 12:07:04.526 [Test worker] INFO  com.jenkins.selenium.BaseTest - Entered search term: Java
+2025-10-20 12:07:04.541 [Test worker] INFO  com.jenkins.selenium.BaseTest - Submitted search
+2025-10-20 12:07:07.550 [Test worker] INFO  com.jenkins.selenium.BaseTest - Current URL: https://www.google.com/sorry/index?continue=https://www.google.com/search%3Fq%3DJava%26sca_esv%3D6e4820828e77e658%26source%3Dhp%26ei%3DJF72aO-NJcChqtsPk9GwwAw%26iflsig%3DAOw8s4IAAAAAaPZsNAIO_IkYuLiscNxBRklLHK5zvJEG%26sei%3DJV72aIqSIJChp84PrarCwQ8&q=EhAmA2CAQwJo1Xlg0iqpSL88GKW82ccGIjArX7eKmrQoy21gnVfmfvRSRssYmRv9oRPhB2CftWroWJe4tXrXh2r2pPIDkOEOvxgyAVJaAUM
+2025-10-20 12:07:07.551 [Test worker] INFO  com.jenkins.selenium.BaseTest - Test passed: Test Java Search
+2025-10-20 12:07:08.580 [Test worker] INFO  com.jenkins.selenium.BaseTest - WebDriver closed successfully
+2025-10-20 12:07:08.580 [Test worker] INFO  com.jenkins.selenium.BaseTest - Running test with CSV data: TestData{searchTerm='Gradle', expectedResult='Gradle', testName='Test Gradle Search', browser='chrome'}
+2025-10-20 12:07:10.329 [Test worker] INFO  com.jenkins.selenium.BaseTest - WebDriver setup completed for browser: chrome
+2025-10-20 12:07:10.966 [Test worker] INFO  com.jenkins.selenium.BaseTest - Navigated to Google homepage
+2025-10-20 12:07:11.067 [Test worker] INFO  com.jenkins.selenium.BaseTest - Entered search term: Gradle
+2025-10-20 12:07:11.227 [Test worker] INFO  com.jenkins.selenium.BaseTest - Submitted search
+2025-10-20 12:07:14.242 [Test worker] INFO  com.jenkins.selenium.BaseTest - Current URL: https://www.google.com/sorry/index?continue=https://www.google.com/search%3Fq%3DGradle%26sca_esv%3D6e4820828e77e658%26source%3Dhp%26ei%3DK172aKvgE-SqwbkPi9nZ-Qc%26iflsig%3DAOw8s4IAAAAAaPZsO4ocHP8nEb6Mc-msqJmSuMTmLMzH%26sei%3DLF72aIzPB4HIwN4P96S4oQc&q=EhAmA2CAQwJo1Xlg0iqpSL88GKy82ccGIjDwJgBTIiJzN5YJ9B-8uHixPQBHDj4EQPZAdHis7ArV2OCypNJwrt3wESdB3YnQYgQyAVJaAUM
+2025-10-20 12:07:14.243 [Test worker] INFO  com.jenkins.selenium.BaseTest - Test passed: Test Gradle Search
+2025-10-20 12:07:14.654 [Test worker] INFO  com.jenkins.selenium.BaseTest - WebDriver closed successfully
+2025-10-20 12:07:14.655 [Test worker] INFO  com.jenkins.selenium.BaseTest - Running test with CSV data: TestData{searchTerm='TestNG', expectedResult='TestNG', testName='Test TestNG Search', browser='chrome'}
+2025-10-20 12:07:15.720 [Test worker] INFO  com.jenkins.selenium.BaseTest - WebDriver setup completed for browser: chrome
+2025-10-20 12:07:16.367 [Test worker] INFO  com.jenkins.selenium.BaseTest - Navigated to Google homepage
+2025-10-20 12:07:16.522 [Test worker] INFO  com.jenkins.selenium.BaseTest - Entered search term: TestNG
+2025-10-20 12:07:16.618 [Test worker] INFO  com.jenkins.selenium.BaseTest - Submitted search
+2025-10-20 12:07:19.639 [Test worker] INFO  com.jenkins.selenium.BaseTest - Current URL: https://www.google.com/sorry/index?continue=https://www.google.com/search%3Fq%3DTestNG%26sca_esv%3D6e4820828e77e658%26source%3Dhp%26ei%3DMF72aI-WLOmTwbkPxYX78Aw%26iflsig%3DAOw8s4IAAAAAaPZsQFE5Q2OgzfSPlb5H0YFmlXmuQigZ%26sei%3DMV72aOuyH-G-p84Pqv_l0Qs&q=EhAmA2CAQwJo1Xlg0iqpSL88GLG82ccGIjCO3ov21aun9dvTKqDbmxP3uGem22XEUdxGedSP_Jgf3Wa14h2zca-se1i2XQIFxqEyAVJaAUM
+2025-10-20 12:07:19.640 [Test worker] INFO  com.jenkins.selenium.BaseTest - Test passed: Test TestNG Search
+2025-10-20 12:07:19.803 [Test worker] INFO  com.jenkins.selenium.BaseTest - WebDriver closed successfully
+2025-10-20 12:07:19.806 [Test worker] INFO  com.jenkins.selenium.BaseTest - WebDriver closed successfully
+2025-10-20 12:07:20.917 [Test worker] INFO  com.jenkins.selenium.BaseTest - WebDriver setup completed for browser: chrome
+2025-10-20 12:07:20.918 [Test worker] INFO  com.jenkins.selenium.BaseTest - Testing Google search functionality
+2025-10-20 12:07:22.450 [Test worker] INFO  com.jenkins.selenium.BaseTest - Navigated to Google homepage
+2025-10-20 12:07:22.610 [Test worker] INFO  com.jenkins.selenium.BaseTest - Entered search term: Jenkins
+2025-10-20 12:07:22.752 [Test worker] INFO  com.jenkins.selenium.BaseTest - Submitted search
+2025-10-20 12:07:25.782 [Test worker] INFO  com.jenkins.selenium.BaseTest - Current URL: https://www.google.com/sorry/index?continue=https://www.google.com/search%3Fq%3DJenkins%26sca_esv%3D6e4820828e77e658%26source%3Dhp%26ei%3DNl72aIX1Nv6bwbkP_4zwwAU%26iflsig%3DAOw8s4IAAAAAaPZsRptwRiE_ruZdBYEw78eDa4fvDUPx%26sei%3DN172aNTwJZ3Dp84P6JOU6Q8&q=EhAmA2CAQwJo1Xlg0iqpSL88GLe82ccGIjBtiXSOFS9yEVHW03kBWlb1W42I1TFuUIiqMiFhZDijFqzIam_URGW1Nm-R035CWEgyAVJaAUM
+2025-10-20 12:07:25.788 [Test worker] INFO  com.jenkins.selenium.BaseTest - Page title: https://www.google.com/search?q=Jenkins&sca_esv=6e4820828e77e658&source=hp&ei=Nl72aIX1Nv6bwbkP_4zwwAU&iflsig=AOw8s4IAAAAAaPZsRptwRiE_ruZdBYEw78eDa4fvDUPx&sei=N172aNTwJZ3Dp84P6JOU6Q8
+2025-10-20 12:07:25.788 [Test worker] INFO  com.jenkins.selenium.BaseTest - Test passed: Google search works correctly
+2025-10-20 12:07:25.953 [Test worker] INFO  com.jenkins.selenium.BaseTest - WebDriver closed successfully
+2025-10-20 12:07:39.820 [main] INFO  com.jenkins.selenium.TestRunner - Starting test execution with CSV file: src/test/resources/testdata.csv
+2025-10-20 12:07:39.841 [main] INFO  com.jenkins.selenium.TestDataReader - Loaded test data: TestData{searchTerm='Jenkins', expectedResult='Jenkins', testName='Test Jenkins Search', browser='chrome'}
+2025-10-20 12:07:39.846 [main] INFO  com.jenkins.selenium.TestDataReader - Loaded test data: TestData{searchTerm='Selenium', expectedResult='Selenium', testName='Test Selenium Search', browser='chrome'}
+2025-10-20 12:07:39.846 [main] INFO  com.jenkins.selenium.TestDataReader - Loaded test data: TestData{searchTerm='Java', expectedResult='Java', testName='Test Java Search', browser='firefox'}
+2025-10-20 12:07:39.846 [main] INFO  com.jenkins.selenium.TestDataReader - Loaded test data: TestData{searchTerm='Gradle', expectedResult='Gradle', testName='Test Gradle Search', browser='chrome'}
+2025-10-20 12:07:39.846 [main] INFO  com.jenkins.selenium.TestDataReader - Loaded test data: TestData{searchTerm='TestNG', expectedResult='TestNG', testName='Test TestNG Search', browser='chrome'}
+2025-10-20 12:07:39.846 [main] INFO  com.jenkins.selenium.TestDataReader - Successfully loaded 5 test data records
+2025-10-20 12:07:39.846 [main] INFO  com.jenkins.selenium.TestRunner - Loaded 5 test cases from CSV
+2025-10-20 12:07:39.846 [main] INFO  com.jenkins.selenium.TestRunner - Executing test: Test Jenkins Search
+2025-10-20 12:07:41.612 [main] INFO  com.jenkins.selenium.BaseTest - WebDriver setup completed for browser: chrome
+2025-10-20 12:07:42.292 [main] INFO  com.jenkins.selenium.TestRunner - Navigated to Google homepage
+2025-10-20 12:07:42.431 [main] INFO  com.jenkins.selenium.TestRunner - Entered search term: Jenkins
+2025-10-20 12:07:43.877 [main] INFO  com.jenkins.selenium.TestRunner - Submitted search
+2025-10-20 12:07:46.090 [main] INFO  com.jenkins.selenium.BaseTest - WebDriver closed successfully
+2025-10-20 12:08:10.113 [main] INFO  com.jenkins.selenium.TestRunner - Starting test execution with CSV file: src/test/resources/testdata.csv
+2025-10-20 12:08:10.135 [main] INFO  com.jenkins.selenium.TestDataReader - Loaded test data: TestData{searchTerm='Jenkins', expectedResult='Jenkins', testName='Test Jenkins Search', browser='chrome'}
+2025-10-20 12:08:10.140 [main] INFO  com.jenkins.selenium.TestDataReader - Loaded test data: TestData{searchTerm='Selenium', expectedResult='Selenium', testName='Test Selenium Search', browser='chrome'}
+2025-10-20 12:08:10.140 [main] INFO  com.jenkins.selenium.TestDataReader - Loaded test data: TestData{searchTerm='Java', expectedResult='Java', testName='Test Java Search', browser='firefox'}
+2025-10-20 12:08:10.140 [main] INFO  com.jenkins.selenium.TestDataReader - Loaded test data: TestData{searchTerm='Gradle', expectedResult='Gradle', testName='Test Gradle Search', browser='chrome'}
+2025-10-20 12:08:10.140 [main] INFO  com.jenkins.selenium.TestDataReader - Loaded test data: TestData{searchTerm='TestNG', expectedResult='TestNG', testName='Test TestNG Search', browser='chrome'}
+2025-10-20 12:08:10.140 [main] INFO  com.jenkins.selenium.TestDataReader - Successfully loaded 5 test data records
+2025-10-20 12:08:10.140 [main] INFO  com.jenkins.selenium.TestRunner - Loaded 5 test cases from CSV
+2025-10-20 12:08:10.141 [main] INFO  com.jenkins.selenium.TestRunner - Executing test: Test Jenkins Search
+2025-10-20 12:08:12.607 [main] INFO  com.jenkins.selenium.BaseTest - WebDriver setup completed for browser: chrome
+2025-10-20 12:08:13.214 [main] INFO  com.jenkins.selenium.TestRunner - Navigated to Google homepage
+2025-10-20 12:08:13.369 [main] INFO  com.jenkins.selenium.TestRunner - Entered search term: Jenkins
+2025-10-20 12:08:13.482 [main] INFO  com.jenkins.selenium.TestRunner - Submitted search
+2025-10-20 12:08:15.500 [main] INFO  com.jenkins.selenium.TestRunner - Current URL: https://www.google.com/sorry/index?continue=https://www.google.com/search%3Fq%3DJenkins%26sca_esv%3D6e4820828e77e658%26source%3Dhp%26ei%3DaV72aLnfJMmfkPIP1abj2Q0%26iflsig%3DAOw8s4IAAAAAaPZseYguEWocvvjPSgbU78Q6EeziGBPA%26sei%3Dal72aPb8FbLmwN4P5rGL6Ag&q=EhAmA2CAQwJo1Xlg0iqpSL88GOq82ccGIjCrIFDhUpPmbnNsHm1Pt9Q7O94e_KVePH16vfC4NeO7PYrWMjQuNPxnnRy2L3oih9IyAVJaAUM
+2025-10-20 12:08:15.507 [main] INFO  com.jenkins.selenium.TestRunner - Page title: https://www.google.com/search?q=Jenkins&sca_esv=6e4820828e77e658&source=hp&ei=aV72aLnfJMmfkPIP1abj2Q0&iflsig=AOw8s4IAAAAAaPZseYguEWocvvjPSgbU78Q6EeziGBPA&sei=al72aPb8FbLmwN4P5rGL6Ag
+2025-10-20 12:08:15.665 [main] INFO  com.jenkins.selenium.BaseTest - WebDriver closed successfully
+2025-10-20 12:08:15.665 [main] INFO  com.jenkins.selenium.TestRunner - Test passed: Test Jenkins Search
+2025-10-20 12:08:15.665 [main] INFO  com.jenkins.selenium.TestRunner - Executing test: Test Selenium Search
+2025-10-20 12:08:16.742 [main] INFO  com.jenkins.selenium.BaseTest - WebDriver setup completed for browser: chrome
+2025-10-20 12:08:17.400 [main] INFO  com.jenkins.selenium.TestRunner - Navigated to Google homepage
+2025-10-20 12:08:17.548 [main] INFO  com.jenkins.selenium.TestRunner - Entered search term: Selenium
+2025-10-20 12:08:17.647 [main] INFO  com.jenkins.selenium.TestRunner - Submitted search
+2025-10-20 12:08:19.658 [main] INFO  com.jenkins.selenium.TestRunner - Current URL: https://www.google.com/sorry/index?continue=https://www.google.com/search%3Fq%3DSelenium%26sca_esv%3D6e4820828e77e658%26source%3Dhp%26ei%3DbV72aICqLa6bwbkPlKuZ4Qc%26iflsig%3DAOw8s4IAAAAAaPZsfboADYXzsF9FVbDmZWNeTU3yyyRX%26sei%3Dbl72aJmHIcvIp84P8aK_yAY&q=EhAmA2CAQwJo1Xlg0iqpSL88GO682ccGIjDM-WEYLCZgJ6PZcYUDIpvBsFSX-9XbCvmc6o6kuZ6ktJ0Qlz4tEEs0gNuqf_5DTsgyAVJaAUM
+2025-10-20 12:08:19.666 [main] INFO  com.jenkins.selenium.TestRunner - Page title: https://www.google.com/search?q=Selenium&sca_esv=6e4820828e77e658&source=hp&ei=bV72aICqLa6bwbkPlKuZ4Qc&iflsig=AOw8s4IAAAAAaPZsfboADYXzsF9FVbDmZWNeTU3yyyRX&sei=bl72aJmHIcvIp84P8aK_yAY
+2025-10-20 12:08:19.838 [main] INFO  com.jenkins.selenium.BaseTest - WebDriver closed successfully
+2025-10-20 12:08:19.838 [main] INFO  com.jenkins.selenium.TestRunner - Test passed: Test Selenium Search
+2025-10-20 12:08:19.839 [main] INFO  com.jenkins.selenium.TestRunner - Executing test: Test Java Search
+2025-10-20 12:08:22.324 [main] INFO  com.jenkins.selenium.BaseTest - WebDriver setup completed for browser: firefox
+2025-10-20 12:08:23.350 [main] INFO  com.jenkins.selenium.TestRunner - Navigated to Google homepage
+2025-10-20 12:08:23.437 [main] INFO  com.jenkins.selenium.TestRunner - Entered search term: Java
+2025-10-20 12:08:23.482 [main] INFO  com.jenkins.selenium.TestRunner - Submitted search
+2025-10-20 12:08:25.499 [main] INFO  com.jenkins.selenium.TestRunner - Current URL: https://www.google.com/sorry/index?continue=https://www.google.com/search%3Fq%3DJava%26sca_esv%3D6e4820828e77e658%26source%3Dhp%26ei%3Dc172aLqdGeahkPIPpLPMaQ%26iflsig%3DAOw8s4IAAAAAaPZsg-zZ0Dl9zw8UNugUM0Hw5xVQLnYq%26sei%3DdF72aNn9G8i9p84P6c7RsQI&q=EhAmA2CAQwJo1Xlg0iqpSL88GPS82ccGIjDRQeQXir0c-oIb3Mi1MPFKtY68Kkynn8lO-wLIJZkCbn-dpDfEfT5ul1UGlwISLTsyAVJaAUM
+2025-10-20 12:08:25.502 [main] INFO  com.jenkins.selenium.TestRunner - Page title: https://www.google.com/search?q=Java&sca_esv=6e4820828e77e658&source=hp&ei=c172aLqdGeahkPIPpLPMaQ&iflsig=AOw8s4IAAAAAaPZsg-zZ0Dl9zw8UNugUM0Hw5xVQLnYq&sei=dF72aNn9G8i9p84P6c7RsQI
+2025-10-20 12:08:26.580 [main] INFO  com.jenkins.selenium.BaseTest - WebDriver closed successfully
+2025-10-20 12:08:26.580 [main] INFO  com.jenkins.selenium.TestRunner - Test passed: Test Java Search
+2025-10-20 12:08:26.580 [main] INFO  com.jenkins.selenium.TestRunner - Executing test: Test Gradle Search
+2025-10-20 12:08:27.644 [main] INFO  com.jenkins.selenium.BaseTest - WebDriver setup completed for browser: chrome
+2025-10-20 12:08:28.350 [main] INFO  com.jenkins.selenium.TestRunner - Navigated to Google homepage
+2025-10-20 12:08:28.478 [main] INFO  com.jenkins.selenium.TestRunner - Entered search term: Gradle
+2025-10-20 12:08:29.703 [main] INFO  com.jenkins.selenium.TestRunner - Submitted search
+2025-10-20 12:08:31.724 [main] INFO  com.jenkins.selenium.TestRunner - Current URL: https://www.google.com/sorry/index?continue=https://www.google.com/search%3Fq%3DGradle%26sca_esv%3D6e4820828e77e658%26source%3Dhp%26ei%3DeF72aJ6_JoyUwbkPhZDqCQ%26iflsig%3DAOw8s4IAAAAAaPZsiJHgCnLW2AQLhNz3k8j1cZHx5YeM%26sei%3DeV72aLjIHKPHp84Pv8yVkQI&q=EhAmA2CAQwJo1Xlg0iqpSL88GPm82ccGIjB-cV9QyE0D6BhXRb9QQQ5KSFkxItus0RVJP-2NgdIL7qvTgU-tFUKTIQrMYH8nUPwyAVJaAUM
+2025-10-20 12:08:31.730 [main] INFO  com.jenkins.selenium.TestRunner - Page title: https://www.google.com/search?q=Gradle&sca_esv=6e4820828e77e658&source=hp&ei=eF72aJ6_JoyUwbkPhZDqCQ&iflsig=AOw8s4IAAAAAaPZsiJHgCnLW2AQLhNz3k8j1cZHx5YeM&sei=eV72aLjIHKPHp84Pv8yVkQI
+2025-10-20 12:08:31.899 [main] INFO  com.jenkins.selenium.BaseTest - WebDriver closed successfully
+2025-10-20 12:08:31.899 [main] INFO  com.jenkins.selenium.TestRunner - Test passed: Test Gradle Search
+2025-10-20 12:08:31.899 [main] INFO  com.jenkins.selenium.TestRunner - Executing test: Test TestNG Search
+2025-10-20 12:08:33.037 [main] INFO  com.jenkins.selenium.BaseTest - WebDriver setup completed for browser: chrome
+2025-10-20 12:08:33.761 [main] INFO  com.jenkins.selenium.TestRunner - Navigated to Google homepage
+2025-10-20 12:08:33.888 [main] INFO  com.jenkins.selenium.TestRunner - Entered search term: TestNG
+2025-10-20 12:08:33.994 [main] INFO  com.jenkins.selenium.TestRunner - Submitted search
+2025-10-20 12:08:36.009 [main] INFO  com.jenkins.selenium.TestRunner - Current URL: https://www.google.com/sorry/index?continue=https://www.google.com/search%3Fq%3DTestNG%26sca_esv%3D6e4820828e77e658%26source%3Dhp%26ei%3Dfl72aPVPv4fBuQ_08p2ZBw%26iflsig%3DAOw8s4IAAAAAaPZsjnEopUh2t1vo-ik7MfKSjdlmYYz2%26sei%3Dfl72aP-WNf_gp84P25Wu-Q4&q=EhAmA2CAQwJo1Xlg0iqpSL88GP-82ccGIjBbJf4-eKXsKM8ez9OnJDnxIlRdaKbGNKDAfXzwyIAV6j_0igU1Riox2H-YWmcJkekyAVJaAUM
+2025-10-20 12:08:36.015 [main] INFO  com.jenkins.selenium.TestRunner - Page title: https://www.google.com/search?q=TestNG&sca_esv=6e4820828e77e658&source=hp&ei=fl72aPVPv4fBuQ_08p2ZBw&iflsig=AOw8s4IAAAAAaPZsjnEopUh2t1vo-ik7MfKSjdlmYYz2&sei=fl72aP-WNf_gp84P25Wu-Q4
+2025-10-20 12:08:36.169 [main] INFO  com.jenkins.selenium.BaseTest - WebDriver closed successfully
+2025-10-20 12:08:36.170 [main] INFO  com.jenkins.selenium.TestRunner - Test passed: Test TestNG Search
+2025-10-20 12:08:36.170 [main] INFO  com.jenkins.selenium.TestRunner - Test execution completed. Passed: 5, Failed: 0
+2025-10-20 12:09:11.544 [main] INFO  com.jenkins.selenium.JenkinsTrigger - Triggering Jenkins job: selenium-tests at http://localhost:8080
+2025-10-20 12:09:12.082 [main] ERROR com.jenkins.selenium.JenkinsAPI - Error triggering Jenkins job: selenium-tests
+org.apache.hc.client5.http.HttpHostConnectException: Connect to http://localhost:8080 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: getsockopt
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:682)
+	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:542)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:592)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
+	at java.base/java.net.Socket.connect(Socket.java:751)
+	at org.apache.hc.client5.http.socket.PlainConnectionSocketFactory.lambda$connectSocket$0(PlainConnectionSocketFactory.java:85)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:571)
+	at org.apache.hc.client5.http.socket.PlainConnectionSocketFactory.connectSocket(PlainConnectionSocketFactory.java:84)
+	at org.apache.hc.client5.http.socket.ConnectionSocketFactory.connectSocket(ConnectionSocketFactory.java:113)
+	at org.apache.hc.client5.http.impl.io.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:181)
+	at org.apache.hc.client5.http.impl.io.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:447)
+	at org.apache.hc.client5.http.impl.classic.InternalExecRuntime.connectEndpoint(InternalExecRuntime.java:162)
+	at org.apache.hc.client5.http.impl.classic.InternalExecRuntime.connectEndpoint(InternalExecRuntime.java:172)
+	at org.apache.hc.client5.http.impl.classic.ConnectExec.execute(ConnectExec.java:142)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.ProtocolExec.execute(ProtocolExec.java:192)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.HttpRequestRetryExec.execute(HttpRequestRetryExec.java:96)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.ContentCompressionExec.execute(ContentCompressionExec.java:152)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.RedirectExec.execute(RedirectExec.java:115)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.InternalHttpClient.doExecute(InternalHttpClient.java:170)
+	at org.apache.hc.client5.http.impl.classic.CloseableHttpClient.execute(CloseableHttpClient.java:123)
+	at com.jenkins.selenium.JenkinsAPI.triggerJob(JenkinsAPI.java:46)
+	at com.jenkins.selenium.JenkinsTrigger.main(JenkinsTrigger.java:30)
+2025-10-20 12:09:12.085 [main] INFO  com.jenkins.selenium.JenkinsTrigger - Job trigger result: ERROR
+2025-10-20 12:09:12.085 [main] ERROR com.jenkins.selenium.JenkinsTrigger - Failed to trigger Jenkins job
