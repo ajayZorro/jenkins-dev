@@ -1,12 +1,5 @@
 pipeline {
-    agent {
-        docker {
-            // CloudBees CI controller/agents typically support Docker. This image has JDK + Chrome + Firefox preinstalled
-            image 'cimg/openjdk:21.0-browsers'
-            args '-u root:root' // allow installing extras if ever needed
-            reuseNode true
-        }
-    }
+    agent any
 
     parameters {
         string(name: 'CSV_FILE', defaultValue: 'src/test/resources/testdata.csv', description: 'Path to CSV test data file')
@@ -30,8 +23,6 @@ pipeline {
         stage('Env') {
             steps {
                 sh 'java -version || true'
-                sh 'google-chrome --version || true'
-                sh 'firefox --version || true'
                 sh 'chmod +x gradlew'
             }
         }
