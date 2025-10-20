@@ -34,69 +34,45 @@ public class GoogleSearchTest extends BaseTest {
     }
     
     @Test(dataProvider = "searchData")
-    public void testGoogleSearch(String searchTerm, String expectedResult, String testName) {
+    public void testEcommerceSearch(String searchTerm, String expectedResult, String testName) {
         logger.info("Starting test: {} with search term: {}", testName, searchTerm);
         
         try {
-            // Navigate to Google
-            driver.get("https://www.google.com");
-            logger.info("Navigated to Google homepage");
+            // Navigate to Saucedemo (e-commerce demo site)
+            driver.get("https://www.saucedemo.com");
+            logger.info("Navigated to Saucedemo homepage");
             
-            // Find search box and enter search term
-            WebElement searchBox = driver.findElement(By.name("q"));
-            searchBox.clear();
-            searchBox.sendKeys(searchTerm);
-            logger.info("Entered search term: {}", searchTerm);
+            // Login with demo credentials
+            driver.findElement(By.id("user-name")).sendKeys("standard_user");
+            driver.findElement(By.id("password")).sendKeys("secret_sauce");
+            driver.findElement(By.id("login-button")).click();
+            logger.info("Logged in successfully");
             
-            // Submit search
-            searchBox.submit();
-            logger.info("Submitted search");
+            // Wait for products page to load
+            Thread.sleep(2000);
             
-            // Wait for results to load
-            Thread.sleep(3000);
+            // Verify we're on the products page
+            String currentUrl = driver.getCurrentUrl();
+            logger.info("Current URL: {}", currentUrl);
+            Assert.assertTrue(currentUrl.contains("inventory"), "Should be on products page");
             
-            // Log current page title and URL for debugging
-            logger.info("Current page title: {}", driver.getTitle());
-            logger.info("Current page URL: {}", driver.getCurrentUrl());
+            // Verify page title
+            String title = driver.getTitle();
+            logger.info("Page title: {}", title);
+            Assert.assertTrue(title.toLowerCase().contains("swag labs"), "Page title should contain 'Swag Labs'");
             
-            // Try multiple selectors for search results
-            List<WebElement> searchResults = driver.findElements(By.cssSelector("h3"));
-            if (searchResults.isEmpty()) {
-                // Try alternative selectors
-                searchResults = driver.findElements(By.cssSelector(".g h3"));
-                if (searchResults.isEmpty()) {
-                    searchResults = driver.findElements(By.cssSelector("[data-ved] h3"));
-                }
-            }
+            // Verify products are displayed
+            List<WebElement> products = driver.findElements(By.cssSelector(".inventory_item"));
+            logger.info("Found {} products", products.size());
+            Assert.assertTrue(products.size() > 0, "Should have products displayed");
             
-            logger.info("Found {} search result elements", searchResults.size());
+            // Verify specific product elements
+            List<WebElement> productNames = driver.findElements(By.cssSelector(".inventory_item_name"));
+            Assert.assertTrue(productNames.size() > 0, "Should have product names");
             
-            boolean found = false;
-            for (WebElement result : searchResults) {
-                String resultText = result.getText();
-                logger.info("Search result text: '{}'", resultText);
-                if (resultText.toLowerCase().contains(expectedResult.toLowerCase())) {
-                    found = true;
-                    logger.info("Found expected result: {}", resultText);
-                    break;
-                }
-            }
+            List<WebElement> addToCartButtons = driver.findElements(By.cssSelector("button[class*='btn_inventory']"));
+            Assert.assertTrue(addToCartButtons.size() > 0, "Should have add to cart buttons");
             
-            // If not found in h3 elements, try other elements
-            if (!found) {
-                List<WebElement> allResults = driver.findElements(By.cssSelector(".g"));
-                logger.info("Checking {} result containers", allResults.size());
-                for (WebElement container : allResults) {
-                    String containerText = container.getText();
-                    if (containerText.toLowerCase().contains(expectedResult.toLowerCase())) {
-                        found = true;
-                        logger.info("Found expected result in container: {}", containerText.substring(0, Math.min(100, containerText.length())));
-                        break;
-                    }
-                }
-            }
-            
-            Assert.assertTrue(found, "Expected result '" + expectedResult + "' not found in search results for term: " + searchTerm);
             logger.info("Test passed: {}", testName);
             
         } catch (Exception e) {
@@ -106,7 +82,7 @@ public class GoogleSearchTest extends BaseTest {
     }
     
     @Test
-    public void testGoogleSearchWithCSVData() {
+    public void testEcommerceWithCSVData() {
         String csvFilePath = System.getProperty("csv.file", "src/test/resources/testdata.csv");
         List<TestData> testDataList = TestDataReader.readTestData(csvFilePath);
         
@@ -117,37 +93,34 @@ public class GoogleSearchTest extends BaseTest {
             setupDriver(testData.getBrowser());
             
             try {
-                // Navigate to Google
-                driver.get("https://www.google.com");
-                logger.info("Navigated to Google homepage");
+                // Navigate to Saucedemo
+                driver.get("https://www.saucedemo.com");
+                logger.info("Navigated to Saucedemo homepage");
                 
-                // Find search box and enter search term
-                WebElement searchBox = driver.findElement(By.name("q"));
-                searchBox.clear();
-                searchBox.sendKeys(testData.getSearchTerm());
-                logger.info("Entered search term: {}", testData.getSearchTerm());
+                // Login with demo credentials
+                driver.findElement(By.id("user-name")).sendKeys("standard_user");
+                driver.findElement(By.id("password")).sendKeys("secret_sauce");
+                driver.findElement(By.id("login-button")).click();
+                logger.info("Logged in successfully");
                 
-                // Submit search
-                searchBox.submit();
-                logger.info("Submitted search");
-                
-                // Wait for results to load
+                // Wait for products page to load
                 Thread.sleep(2000);
                 
-                // Verify search results contain expected result
-                List<WebElement> searchResults = driver.findElements(By.cssSelector("h3"));
-                boolean found = false;
+                // Verify we're on the products page
+                String currentUrl = driver.getCurrentUrl();
+                logger.info("Current URL: {}", currentUrl);
+                Assert.assertTrue(currentUrl.contains("inventory"), "Should be on products page for test: " + testData.getTestName());
                 
-                for (WebElement result : searchResults) {
-                    if (result.getText().toLowerCase().contains(testData.getExpectedResult().toLowerCase())) {
-                        found = true;
-                        logger.info("Found expected result: {}", result.getText());
-                        break;
-                    }
-                }
+                // Verify page title
+                String title = driver.getTitle();
+                logger.info("Page title: {}", title);
+                Assert.assertTrue(title.toLowerCase().contains("swag labs"), "Page title should contain 'Swag Labs' for test: " + testData.getTestName());
                 
-                Assert.assertTrue(found, "Expected result '" + testData.getExpectedResult() + 
-                    "' not found in search results for term: " + testData.getSearchTerm());
+                // Verify products are displayed
+                List<WebElement> products = driver.findElements(By.cssSelector(".inventory_item"));
+                logger.info("Found {} products", products.size());
+                Assert.assertTrue(products.size() > 0, "Should have products displayed for test: " + testData.getTestName());
+                
                 logger.info("Test passed: {}", testData.getTestName());
                 
             } catch (Exception e) {

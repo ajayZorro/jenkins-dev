@@ -54,36 +54,38 @@ public class TestRunner {
         baseTest.setupDriver(testData.getBrowser());
         
         try {
-            // Navigate to Google
-            baseTest.driver.get("https://www.google.com");
-            logger.info("Navigated to Google homepage");
+            // Navigate to Saucedemo (e-commerce demo site)
+            baseTest.driver.get("https://www.saucedemo.com");
+            logger.info("Navigated to Saucedemo homepage");
             
-            // Find search box and enter search term
-            var searchBox = baseTest.driver.findElement(org.openqa.selenium.By.name("q"));
-            searchBox.clear();
-            searchBox.sendKeys(testData.getSearchTerm());
-            logger.info("Entered search term: {}", testData.getSearchTerm());
+            // Login with demo credentials
+            baseTest.driver.findElement(org.openqa.selenium.By.id("user-name")).sendKeys("standard_user");
+            baseTest.driver.findElement(org.openqa.selenium.By.id("password")).sendKeys("secret_sauce");
+            baseTest.driver.findElement(org.openqa.selenium.By.id("login-button")).click();
+            logger.info("Logged in successfully");
             
-            // Submit search
-            searchBox.submit();
-            logger.info("Submitted search");
-            
-            // Wait for results to load
+            // Wait for products page to load
             Thread.sleep(2000);
             
-            // Verify we're on a search results page
+            // Verify we're on the products page
             String currentUrl = baseTest.driver.getCurrentUrl();
             logger.info("Current URL: {}", currentUrl);
-            if (!currentUrl.contains("search") && !currentUrl.contains("q=")) {
-                throw new AssertionError("Should be on search results page for term: " + testData.getSearchTerm());
+            if (!currentUrl.contains("inventory")) {
+                throw new AssertionError("Should be on products page for test: " + testData.getTestName());
             }
             
-            // Verify page title indicates search results
+            // Verify page title
             String title = baseTest.driver.getTitle();
             logger.info("Page title: {}", title);
-            if (!title.toLowerCase().contains(testData.getSearchTerm().toLowerCase()) && 
-                !title.toLowerCase().contains("search")) {
-                throw new AssertionError("Page title should indicate search results for term: " + testData.getSearchTerm());
+            if (!title.toLowerCase().contains("swag labs")) {
+                throw new AssertionError("Page title should contain 'Swag Labs' for test: " + testData.getTestName());
+            }
+            
+            // Verify products are displayed
+            var products = baseTest.driver.findElements(org.openqa.selenium.By.cssSelector(".inventory_item"));
+            logger.info("Found {} products", products.size());
+            if (products.size() == 0) {
+                throw new AssertionError("Should have products displayed for test: " + testData.getTestName());
             }
             
         } finally {

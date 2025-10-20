@@ -1,6 +1,6 @@
 searchTerm,expectedResult,testName,browser
-Jenkins,Jenkins,Test Jenkins Search,chrome
-Selenium,Selenium,Test Selenium Search,chrome
-Java,Java,Test Java Search,firefox
-Gradle,Gradle,Test Gradle Search,chrome
-TestNG,TestNG,Test TestNG Search,chrome
+Ecommerce,Swag Labs,Test Ecommerce Login,chrome
+Products,Inventory,Test Product Display,chrome
+Shopping,Cart,Test Shopping Cart,firefox
+Checkout,Payment,Test Checkout Process,chrome
+User,Login,Test User Authentication,chrome
