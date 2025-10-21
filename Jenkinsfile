@@ -55,7 +55,6 @@ pipeline {
             }
         }
 
-    
         stage('Optional: Trigger Downstream') {
             when {
                 allOf {
