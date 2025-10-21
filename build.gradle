@@ -39,6 +39,7 @@ test {
     testLogging {
         events "passed", "skipped", "failed"
         exceptionFormat "full"
+        showStandardStreams = true
     }
 }
 
@@ -57,4 +58,41 @@ task runTestsWithCSV(type: JavaExec) {
 task triggerJenkinsJob(type: JavaExec) {
     classpath = sourceSets.main.runtimeClasspath
     mainClass = 'com.jenkins.selenium.JenkinsTrigger'
+}
+
+// Task to run Jenkins CLI
+task jenkinsCLI(type: JavaExec) {
+    classpath = sourceSets.main.runtimeClasspath
+    mainClass = 'com.jenkins.selenium.JenkinsCLI'
+    systemProperty 'jenkins.url', project.hasProperty('jenkins.url') ? project.property('jenkins.url') : 'http://localhost:8080'
+    systemProperty 'jenkins.username', project.hasProperty('jenkins.username') ? project.property('jenkins.username') : 'ajaybenadict'
+    systemProperty 'jenkins.token', project.hasProperty('jenkins.token') ? project.property('jenkins.token') : ''
+}
+
+// Task to run Jenkins test runner
+task jenkinsTestRunner(type: JavaExec) {
+    classpath = sourceSets.main.runtimeClasspath
+    mainClass = 'com.jenkins.selenium.JenkinsTestRunner'
+    systemProperty 'jenkins.url', project.hasProperty('jenkins.url') ? project.property('jenkins.url') : 'http://localhost:8080'
+    systemProperty 'jenkins.username', project.hasProperty('jenkins.username') ? project.property('jenkins.username') : 'ajaybenadict'
+    systemProperty 'jenkins.token', project.hasProperty('jenkins.token') ? project.property('jenkins.token') : '11d24e0e3935da12d9b937bb476f298073'
+    systemProperty 'jenkins.job', project.hasProperty('jenkins.job') ? project.property('jenkins.job') : 'jenkins-dev-test'
+    systemProperty 'browser', project.hasProperty('browser') ? project.property('browser') : 'chrome'
+    systemProperty 'csv.file', project.hasProperty('csv.file') ? project.property('csv.file') : 'src/test/resources/testdata.csv'
+    systemProperty 'wait', project.hasProperty('wait') ? project.property('wait') : 'true'
+    systemProperty 'timeout', project.hasProperty('timeout') ? project.property('timeout') : '30'
+}
+
+// Task to run comprehensive Jenkins integration tests
+task jenkinsIntegrationTest(type: JavaExec) {
+    classpath = sourceSets.main.runtimeClasspath
+    mainClass = 'com.jenkins.selenium.JenkinsTestRunner'
+    args = [
+        project.hasProperty('jenkins.url') ? project.property('jenkins.url') : 'http://localhost:8080',
+        project.hasProperty('jenkins.username') ? project.property('jenkins.username') : 'admin',
+        project.hasProperty('jenkins.token') ? project.property('jenkins.token') : '',
+        project.hasProperty('jenkins.job') ? project.property('jenkins.job') : 'selenium-tests',
+        project.hasProperty('browser') ? project.property('browser') : 'chrome',
+        project.hasProperty('csv.file') ? project.property('csv.file') : 'src/test/resources/testdata.csv'
+    ]
 }
