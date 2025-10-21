@@ -55,19 +55,32 @@ pipeline {
                     // Archive HTML test reports
                     archiveArtifacts artifacts: 'build/reports/tests/test/**', allowEmptyArchive: true
                     
-                    // Archive Allure results
+                    // Archive Allure results (if they exist)
                     archiveArtifacts artifacts: 'build/allure-results/**', allowEmptyArchive: true
                     
-                    // Archive screenshots on failure
+                    // Archive screenshots (if they exist)
                     archiveArtifacts artifacts: 'build/screenshots/**', allowEmptyArchive: true
                     
-                    // Publish Allure report
+                    // Archive test output directory
+                    archiveArtifacts artifacts: 'build/test-output/**', allowEmptyArchive: true
+                    
+                    // Publish Allure report (now that plugin is installed)
                     allure([
                         includeProperties: false,
                         jdk: '',
                         properties: [],
                         reportBuildPolicy: 'ALWAYS',
                         results: [[path: 'build/allure-results']]
+                    ])
+                    
+                    // Publish HTML reports using HTML Publisher plugin
+                    publishHTML([
+                        allowMissing: true,
+                        alwaysLinkToLastBuild: true,
+                        keepAll: true,
+                        reportDir: 'build/reports/tests/test',
+                        reportFiles: 'index.html',
+                        reportName: 'Test Report'
                     ])
                 }
             }

@@ -76,6 +76,18 @@ task copyTestReports(type: Copy) {
     include '**/*.xml'
 }
 
+// Task to create necessary directories
+task createDirectories {
+    doLast {
+        mkdir 'build/screenshots'
+        mkdir 'build/allure-results'
+        mkdir 'build/test-output'
+    }
+}
+
+// Ensure directories are created before tests run
+test.dependsOn createDirectories
+
 // Allure configuration
 allure {
     version = '2.24.0'
