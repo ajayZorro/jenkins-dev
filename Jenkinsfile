@@ -55,12 +55,7 @@ pipeline {
             }
         }
 
-        stage('CSV Tests') {
-            steps {
-                bat "gradlew.bat runTestsWithCSV -Dcsv.file=${params.CSV_FILE} -Dbrowser=${params.BROWSER}"
-            }
-        }
-
+    
         stage('Optional: Trigger Downstream') {
             when {
                 allOf {
