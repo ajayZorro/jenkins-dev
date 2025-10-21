@@ -48,11 +48,11 @@ application {
 }
 
 // Task to run tests with CSV data
-task runTestsWithCSV(type: JavaExec) {
-    classpath = sourceSets.main.runtimeClasspath
-    mainClass = 'com.jenkins.selenium.TestRunner'
-    args = ['src/test/resources/testdata.csv']
-}
+// task runTestsWithCSV(type: JavaExec) {
+//     classpath = sourceSets.main.runtimeClasspath
+//     mainClass = 'com.jenkins.selenium.TestRunner'
+//     args = ['src/test/resources/testdata.csv']
+// }
 
 // Task to trigger Jenkins job
 task triggerJenkinsJob(type: JavaExec) {
