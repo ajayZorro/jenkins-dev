@@ -3,8 +3,8 @@ pipeline {
 
     parameters {
         string(name: 'TEST_METHODS', defaultValue: '', description: 'Test methods to run, space-separated. Leave empty to run all.')
-        string(name: 'BROWSER', choices: ['chrome', 'firefox'], description: 'Browser to use for tests')
-        string(name: 'CSV_FILE', defaultValue: 'src/test/resources/testdata.csv', description: 'Path to CSV test data file')
+        choice(name: 'BROWSER', choices: ['chrome', 'firefox'], description: 'Browser to use for tests')
+        string(name: 'CSV_FILE', defaultValue: 'src/test/resources/testdata.csv', description: 'CSV test data file')
         string(name: 'JENKINS_URL', defaultValue: '', description: 'Optional: Jenkins URL to trigger downstream job')
         string(name: 'JENKINS_USERNAME', defaultValue: '', description: 'Optional: Jenkins Username')
         password(name: 'JENKINS_TOKEN', description: 'Optional: Jenkins API Token')
