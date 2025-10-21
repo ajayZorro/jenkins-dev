@@ -1,5 +1,7 @@
 package com.jenkins.selenium;
 
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -9,7 +11,13 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.time.Duration;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 public class BaseTest {
     protected static final Logger logger = LoggerFactory.getLogger(BaseTest.class);
@@ -65,6 +73,56 @@ public class BaseTest {
         if (driver != null) {
             driver.quit();
             logger.info("WebDriver closed successfully");
+        }
+    }
+    
+    /**
+     * Capture screenshot and save to file
+     * @param testName Name of the test for file naming
+     * @return Path to the saved screenshot file
+     */
+    protected String captureScreenshot(String testName) {
+        if (driver == null) {
+            logger.warn("Driver is null, cannot capture screenshot");
+            return null;
+        }
+        
+        try {
+            // Create screenshots directory
+            String screenshotDir = System.getProperty("selenium.screenshot.dir", "build/screenshots");
+            Path screenshotPath = Paths.get(screenshotDir);
+            Files.createDirectories(screenshotPath);
+            
+            // Generate filename with timestamp
+            String timestamp = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyyMMdd_HHmmss"));
+            String fileName = String.format("%s_%s.png", testName, timestamp);
+            Path filePath = screenshotPath.resolve(fileName);
+            
+            // Capture screenshot
+            TakesScreenshot screenshot = (TakesScreenshot) driver;
+            byte[] screenshotBytes = screenshot.getScreenshotAs(OutputType.BYTES);
+            
+            // Save to file
+            Files.write(filePath, screenshotBytes);
+            
+            logger.info("Screenshot captured: {}", filePath.toString());
+            return filePath.toString();
+            
+        } catch (IOException e) {
+            logger.error("Failed to capture screenshot: {}", e.getMessage());
+            return null;
+        }
+    }
+    
+    /**
+     * Capture screenshot on test failure
+     * @param testName Name of the test
+     * @param errorMessage Error message for context
+     */
+    protected void captureScreenshotOnFailure(String testName, String errorMessage) {
+        String screenshotPath = captureScreenshot(testName + "_FAILED");
+        if (screenshotPath != null) {
+            logger.error("Test failed: {}. Screenshot saved: {}", errorMessage, screenshotPath);
         }
     }
 }

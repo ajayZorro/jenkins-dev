@@ -32,7 +32,7 @@ public class JenkinsAPI {
     }
     
     public String triggerJob(String jobName) {
-        String triggerUrl = jenkinsUrl + "job/" + jobName + "/build";
+        String triggerUrl = jenkinsUrl + "job/" + jobName + "/buildWithParameters";
         String auth = username + ":" + apiToken;
         String encodedAuth = Base64.getEncoder().encodeToString(auth.getBytes(StandardCharsets.UTF_8));
         

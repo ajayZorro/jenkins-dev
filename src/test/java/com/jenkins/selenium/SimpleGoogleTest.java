@@ -41,6 +41,7 @@ public class SimpleGoogleTest extends BaseTest {
             
         } catch (Exception e) {
             logger.error("Test failed: {}", e.getMessage());
+            captureScreenshotOnFailure("testGooglePageLoads", e.getMessage());
             Assert.fail("Test failed: " + e.getMessage());
         }
     }
@@ -83,6 +84,7 @@ public class SimpleGoogleTest extends BaseTest {
             
         } catch (Exception e) {
             logger.error("Test failed: {}", e.getMessage());
+            captureScreenshotOnFailure("testGoogleSearchWorks", e.getMessage());
             Assert.fail("Test failed: " + e.getMessage());
         }
     }
@@ -128,6 +130,7 @@ public class SimpleGoogleTest extends BaseTest {
                 
             } catch (Exception e) {
                 logger.error("Test failed: {} - Error: {}", testData.getTestName(), e.getMessage());
+                captureScreenshotOnFailure(testData.getTestName(), e.getMessage());
                 Assert.fail("Test failed: " + testData.getTestName() + " - " + e.getMessage());
             } finally {
                 teardownDriver();

@@ -1,11 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Selenium Test Suite" parallel="methods" thread-count="2">
+    <listeners>
+        <listener class-name="com.jenkins.selenium.TestNGListener"/>
+    </listeners>
+    
     <test name="Google Search Tests">
         <classes>
-            <class name="com.jenkins.selenium.GoogleSearchTest">
+            <class name="com.jenkins.selenium.SimpleGoogleTest">
                 <methods>
-                    <include name="testGoogleSearch"/>
+                    <include name="testGooglePageLoads"/>
+                    <include name="testGoogleSearchWorks"/>
                     <include name="testGoogleSearchWithCSVData"/>
                 </methods>
             </class>

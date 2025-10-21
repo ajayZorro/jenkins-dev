@@ -49,8 +49,26 @@ pipeline {
             }
             post {
                 always {
+                    // Publish JUnit test results
                     junit 'build/test-results/test/*.xml'
+                    
+                    // Archive HTML test reports
                     archiveArtifacts artifacts: 'build/reports/tests/test/**', allowEmptyArchive: true
+                    
+                    // Archive Allure results
+                    archiveArtifacts artifacts: 'build/allure-results/**', allowEmptyArchive: true
+                    
+                    // Archive screenshots on failure
+                    archiveArtifacts artifacts: 'build/screenshots/**', allowEmptyArchive: true
+                    
+                    // Publish Allure report
+                    allure([
+                        includeProperties: false,
+                        jdk: '',
+                        properties: [],
+                        reportBuildPolicy: 'ALWAYS',
+                        results: [[path: 'build/allure-results']]
+                    ])
                 }
             }
         }

@@ -1,6 +1,7 @@
 plugins {
     id 'java'
     id 'application'
+    id 'io.qameta.allure' version '2.11.2'
 }
 
 group = 'com.jenkins.selenium'
@@ -35,11 +36,53 @@ dependencies {
 }
 
 test {
-    useTestNG()
+    useTestNG() {
+        suites 'src/test/resources/testng.xml'
+    }
+    
     testLogging {
         events "passed", "skipped", "failed"
         exceptionFormat "full"
         showStandardStreams = true
+    }
+    
+    // Generate comprehensive test reports
+    reports {
+        junitXml.required = true
+        html.required = true
+    }
+    
+    // Configure TestNG options
+    options {
+        useDefaultListeners = true
+        listeners = ['org.testng.reporters.XMLReporter']
+    }
+    
+    // Set system properties for better reporting
+    systemProperty 'allure.results.directory', 'build/allure-results'
+    systemProperty 'testng.output.directory', 'build/test-output'
+    
+    // Capture screenshots on failure
+    systemProperty 'selenium.screenshot.dir', 'build/screenshots'
+    
+    // Finalize test task to copy reports
+    finalizedBy 'copyTestReports'
+}
+
+// Task to copy test reports to a standard location
+task copyTestReports(type: Copy) {
+    from 'build/test-results'
+    into 'build/reports/test-results'
+    include '**/*.xml'
+}
+
+// Allure configuration
+allure {
+    version = '2.24.0'
+    adapter {
+        frameworks {
+            testng
+        }
     }
 }
 
