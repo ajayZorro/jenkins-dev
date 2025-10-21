@@ -1,7 +1,7 @@
 plugins {
     id 'java'
     id 'application'
-    id 'io.qameta.allure' version '2.11.2'
+    id 'io.qameta.allure' version '2.12.0'
 }
 
 group = 'com.jenkins.selenium'
@@ -82,15 +82,30 @@ task createDirectories {
         mkdir 'build/screenshots'
         mkdir 'build/allure-results'
         mkdir 'build/test-output'
+        mkdir 'build/reports/tests/test'
     }
 }
 
 // Ensure directories are created before tests run
 test.dependsOn createDirectories
 
+// Task to generate Allure report
+task generateAllureReport(type: Exec) {
+    dependsOn test
+    commandLine 'allure', 'generate', 'build/allure-results', '-o', 'build/allure-report', '--clean'
+    ignoreExitValue = true
+}
+
+// Task to serve Allure report (for local development)
+task serveAllureReport(type: Exec) {
+    dependsOn generateAllureReport
+    commandLine 'allure', 'serve', 'build/allure-results'
+    ignoreExitValue = true
+}
+
 // Allure configuration
 allure {
-    version = '2.24.0'
+    version = '2.32.0'
     adapter {
         frameworks {
             testng

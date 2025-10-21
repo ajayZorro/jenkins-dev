@@ -64,7 +64,7 @@ pipeline {
                     // Archive test output directory
                     archiveArtifacts artifacts: 'build/test-output/**', allowEmptyArchive: true
                     
-                    // Publish Allure report (now that plugin is installed)
+                    // Publish Allure report (now that commandline is installed)
                     allure([
                         includeProperties: false,
                         jdk: '',
