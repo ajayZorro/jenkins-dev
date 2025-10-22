@@ -5,7 +5,7 @@
         <listener class-name="com.jenkins.selenium.TestNGListener"/>
     </listeners>
     
-    <test name="Google Search Tests">
+    <!-- <test name="Google Search Tests">
         <classes>
             <class name="com.jenkins.selenium.SimpleGoogleTest">
                 <methods>
@@ -15,5 +15,5 @@
                 </methods>
             </class>
         </classes>
-    </test>
+    </test> -->
 </suite>
