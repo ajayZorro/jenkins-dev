@@ -49,39 +49,11 @@ pipeline {
             }
             post {
                 always {
-                    // List test result files for debugging
-                    script {
-                        echo "Checking for test result files..."
-                        if (fileExists('build/test-results/test/')) {
-                            echo "Test results directory exists"
-                            bat 'dir build\\test-results\\test\\*.xml /b 2>nul || echo No XML files found'
-                        } else {
-                            echo "Test results directory does not exist"
-                        }
-                    }
-                    
-                    // Publish JUnit test results with better error handling
-                    script {
-                        try {
-                            junit 'build/test-results/test/*.xml'
-                            echo "JUnit results published successfully"
-                        } catch (Exception e) {
-                            echo "Warning: Could not publish JUnit results: ${e.message}"
-                            // Try alternative path
-                            try {
-                                junit 'build/test-results/**/*.xml'
-                                echo "JUnit results published from alternative path"
-                            } catch (Exception e2) {
-                                echo "Warning: Could not publish JUnit results from alternative path: ${e2.message}"
-                            }
-                        }
-                    }
+                    // Archive test results directory
+                    archiveArtifacts artifacts: 'build/test-results/**', allowEmptyArchive: true
                     
                     // Archive HTML test reports
                     archiveArtifacts artifacts: 'build/reports/tests/test/**', allowEmptyArchive: true
-                    
-                    // Archive Allure results (if they exist)
-                    archiveArtifacts artifacts: 'build/allure-results/**', allowEmptyArchive: true
                     
                     // Archive screenshots (if they exist)
                     archiveArtifacts artifacts: 'build/screenshots/**', allowEmptyArchive: true
@@ -89,17 +61,8 @@ pipeline {
                     // Archive test output directory
                     archiveArtifacts artifacts: 'build/test-output/**', allowEmptyArchive: true
                     
-                    // Archive test results directory
-                    archiveArtifacts artifacts: 'build/test-results/**', allowEmptyArchive: true
-                    
-                    // Publish Allure report (temporarily disabled until commandline is configured)
-                    // allure([
-                    //     includeProperties: false,
-                    //     jdk: '',
-                    //     properties: [],
-                    //     reportBuildPolicy: 'ALWAYS',
-                    //     results: [[path: 'build/allure-results']]
-                    // ])
+                    // Archive Allure results (if they exist)
+                    archiveArtifacts artifacts: 'build/allure-results/**', allowEmptyArchive: true
                     
                     // Publish HTML reports using HTML Publisher plugin
                     publishHTML([
