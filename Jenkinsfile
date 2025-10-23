@@ -40,7 +40,6 @@ pipeline {
                     echo "Requested test methods: '${params.TEST_METHODS}'"
                     def gradleCmd = ''
                     if (params.TEST_METHODS?.trim()) {
-                        // Use Gradle test task with wildcard pattern for method names
                         def testMethods = params.TEST_METHODS.split()
                         gradleCmd = "gradlew.bat test " + testMethods.collect { "--tests \"*${it}*\"" }.join(' ')
                     } else {
