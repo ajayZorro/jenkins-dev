@@ -64,6 +64,27 @@ pipeline {
                     // Archive Allure results (if they exist)
                     archiveArtifacts artifacts: 'build/allure-results/**', allowEmptyArchive: true
                     
+                    // Generate and publish Allure report
+                    script {
+                        try {
+                            // Try to generate Allure report using Gradle task
+                            bat 'gradlew.bat generateAllureReport'
+                            
+                            // Publish the generated report
+                            allure([
+                                includeProperties: false,
+                                jdk: '',
+                                properties: [],
+                                reportBuildPolicy: 'ALWAYS',
+                                results: [[path: 'build/allure-results']]
+                            ])
+                            echo "Allure report generated and published successfully"
+                        } catch (Exception e) {
+                            echo "Warning: Could not generate Allure report: ${e.message}"
+                            echo "Allure results are still archived for manual review"
+                        }
+                    }
+                    
                     // Publish HTML reports using HTML Publisher plugin
                     publishHTML([
                         allowMissing: true,
