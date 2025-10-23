@@ -40,9 +40,31 @@ pipeline {
                     echo "Requested test methods: '${params.TEST_METHODS}'"
                     def gradleCmd = ''
                     if (params.TEST_METHODS?.trim()) {
-                        // Use Gradle test task with wildcard pattern for method names
+                        // Create a temporary testng.xml with specific methods
                         def testMethods = params.TEST_METHODS.split()
-                        gradleCmd = "gradlew.bat test " + testMethods.collect { "--tests \"*${it}*\"" }.join(' ')
+                        def testngContent = """<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Selenium Test Suite" parallel="methods" thread-count="2">
+    <listeners>
+        <listener class-name="com.jenkins.selenium.TestNGListener"/>
+    </listeners>
+    
+    <test name="Google Search Tests">
+        <classes>
+            <class name="com.jenkins.selenium.SimpleGoogleTest">
+                <methods>
+${testMethods.collect { "                    <include name=\"${it}\"/>" }.join('\n')}
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>"""
+                        
+                        // Write temporary testng.xml
+                        writeFile file: 'temp-testng.xml', text: testngContent
+                        
+                        // Use the temporary testng.xml
+                        gradleCmd = "gradlew.bat test -Dtestng.suiteXmlFile=temp-testng.xml"
                     } else {
                         gradleCmd = 'gradlew.bat test'
                     }
