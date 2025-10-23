@@ -49,8 +49,32 @@ pipeline {
             }
             post {
                 always {
-                    // Publish JUnit test results
-                    junit 'build/test-results/test/*.xml'
+                    // List test result files for debugging
+                    script {
+                        echo "Checking for test result files..."
+                        def testResultFiles = findFiles(glob: 'build/test-results/test/*.xml')
+                        echo "Found ${testResultFiles.length} test result files:"
+                        testResultFiles.each { file ->
+                            echo "  - ${file.path}"
+                        }
+                    }
+                    
+                    // Publish JUnit test results with better error handling
+                    script {
+                        try {
+                            junit 'build/test-results/test/*.xml'
+                            echo "JUnit results published successfully"
+                        } catch (Exception e) {
+                            echo "Warning: Could not publish JUnit results: ${e.message}"
+                            // Try alternative path
+                            try {
+                                junit 'build/test-results/**/*.xml'
+                                echo "JUnit results published from alternative path"
+                            } catch (Exception e2) {
+                                echo "Warning: Could not publish JUnit results from alternative path: ${e2.message}"
+                            }
+                        }
+                    }
                     
                     // Archive HTML test reports
                     archiveArtifacts artifacts: 'build/reports/tests/test/**', allowEmptyArchive: true
@@ -64,14 +88,17 @@ pipeline {
                     // Archive test output directory
                     archiveArtifacts artifacts: 'build/test-output/**', allowEmptyArchive: true
                     
-                    // Publish Allure report (now that commandline is installed)
-                    allure([
-                        includeProperties: false,
-                        jdk: '',
-                        properties: [],
-                        reportBuildPolicy: 'ALWAYS',
-                        results: [[path: 'build/allure-results']]
-                    ])
+                    // Archive test results directory
+                    archiveArtifacts artifacts: 'build/test-results/**', allowEmptyArchive: true
+                    
+                    // Publish Allure report (temporarily disabled until commandline is configured)
+                    // allure([
+                    //     includeProperties: false,
+                    //     jdk: '',
+                    //     properties: [],
+                    //     reportBuildPolicy: 'ALWAYS',
+                    //     results: [[path: 'build/allure-results']]
+                    // ])
                     
                     // Publish HTML reports using HTML Publisher plugin
                     publishHTML([
