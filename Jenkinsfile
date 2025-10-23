@@ -52,10 +52,11 @@ pipeline {
                     // List test result files for debugging
                     script {
                         echo "Checking for test result files..."
-                        def testResultFiles = findFiles(glob: 'build/test-results/test/*.xml')
-                        echo "Found ${testResultFiles.length} test result files:"
-                        testResultFiles.each { file ->
-                            echo "  - ${file.path}"
+                        if (fileExists('build/test-results/test/')) {
+                            echo "Test results directory exists"
+                            bat 'dir build\\test-results\\test\\*.xml /b 2>nul || echo No XML files found'
+                        } else {
+                            echo "Test results directory does not exist"
                         }
                     }
                     
