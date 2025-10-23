@@ -6,6 +6,11 @@
     <hudson.model.ParametersDefinitionProperty>
       <parameterDefinitions>
         <hudson.model.StringParameterDefinition>
+          <name>TEST_METHODS</name>
+          <description>Test methods to run, space-separated. Leave empty to run all.</description>
+          <defaultValue></defaultValue>
+        </hudson.model.StringParameterDefinition>
+        <hudson.model.StringParameterDefinition>
           <name>CSV_FILE</name>
           <description>Path to CSV test data file</description>
           <defaultValue>src/test/resources/testdata.csv</defaultValue>

@@ -40,35 +40,18 @@ pipeline {
                     echo "Requested test methods: '${params.TEST_METHODS}'"
                     def gradleCmd = ''
                     if (params.TEST_METHODS?.trim()) {
-                        // Create a temporary testng.xml with specific methods
+                        // Use Gradle test task with wildcard pattern for method names
                         def testMethods = params.TEST_METHODS.split()
-                        def testngContent = """<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Selenium Test Suite" parallel="methods" thread-count="2">
-    <listeners>
-        <listener class-name="com.jenkins.selenium.TestNGListener"/>
-    </listeners>
-    
-    <test name="Google Search Tests">
-        <classes>
-            <class name="com.jenkins.selenium.SimpleGoogleTest">
-                <methods>
-${testMethods.collect { "                    <include name=\"${it}\"/>" }.join('\n')}
-                </methods>
-            </class>
-        </classes>
-    </test>
-</suite>"""
-                        
-                        // Write temporary testng.xml
-                        writeFile file: 'temp-testng.xml', text: testngContent
-                        
-                        // Use the temporary testng.xml
-                        gradleCmd = "gradlew.bat test -Dtestng.suiteXmlFile=temp-testng.xml"
+                        gradleCmd = "gradlew.bat test " + testMethods.collect { "--tests \"*${it}*\"" }.join(' ')
                     } else {
                         gradleCmd = 'gradlew.bat test'
                     }
                     echo "Executing command: ${gradleCmd}"
+                    
+                    // Debug: List available test classes
+                    bat 'gradlew.bat test --dry-run'
+                    
+                    // Run the actual test command
                     bat gradleCmd
                 }
             }
@@ -89,11 +72,14 @@ ${testMethods.collect { "                    <include name=\"${it}\"/>" }.join('
                     // Archive Allure results (if they exist)
                     archiveArtifacts artifacts: 'build/allure-results/**', allowEmptyArchive: true
                     
+                    // Archive Allure report (if generated)
+                    archiveArtifacts artifacts: 'build/allure-report/**', allowEmptyArchive: true
+                    
                     // Generate and publish Allure report
                     script {
                         try {
-                            // Try to generate Allure report using Gradle task
-                            bat 'gradlew.bat generateAllureReport'
+                            // Generate Allure report using commandline
+                            bat 'allure generate build/allure-results -o build/allure-report --clean'
                             
                             // Publish the generated report
                             allure([
